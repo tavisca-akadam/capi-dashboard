@@ -1,0 +1,8 @@
+<button 
+    type="button"
+    class="btn"
+    [ngClass]="{'btn-primary': buttonState == true, 'btn-danger': buttonState == false}"
+    (click)="toggleKeyState($event)"
+    >
+    {{ buttonState ? 'Activate' : 'Deactivate' }}
+</button>

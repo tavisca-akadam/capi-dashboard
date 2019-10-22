@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+        <app-search
+            [receivedList]="keyListData"
+            (filteredList)="keyListData = $event">
+        </app-search>
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+        <app-sort (childEvent)="keyListData=$event" [keyListData]="keyListData"></app-sort>
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+        <app-create-key></app-create-key>  
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+        <app-key-list [keyListData]="keyListData"></app-key-list>
+    </div>
+</div>
+<router-outlet></router-outlet>
+

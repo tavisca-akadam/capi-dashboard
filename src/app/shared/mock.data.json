@@ -1,0 +1,27 @@
+[
+    {
+        "client": "citi",
+        "access-key": "sAFJGGHIFBVvshb14346",
+        "activate": false
+    },
+    {
+        "client": "amex",
+        "access-key": "urbnNJDBIORN234",
+        "activate": true
+    },
+    {
+        "client": "capital-one",
+        "access-key": "WNGJRLBL1456653",
+        "activate": false
+    },
+    {
+        "client": "JP Morgan",
+        "access-key": "werytuulvjbvgcYFWDH",
+        "activate": true
+    },
+    {
+        "client": "vodafone",
+        "access-key": "fhgjhgljg54687YDHG",
+        "activate": true
+    }
+]
