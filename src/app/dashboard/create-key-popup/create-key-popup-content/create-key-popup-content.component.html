@@ -1,16 +1,34 @@
-<form>
-    <div class="form-group">
-        <label>Client</label>
-        <input class="form-control" id="client" placeholder="Enter Client Name" required>
+<form (submit)="createKey($event)">
+    <div *ngIf="showBanner">
+        <app-create-key-alert [bannerType]="bannerType"></app-create-key-alert>
     </div>
     <div class="form-group">
-        <label>Client Program Group</label>
-        <input class="form-control" id="cpg" placeholder="Enter CPG" required>
+        <label for="clientName">Client Name</label>
+        <select required class="form-control" id="clientName">
+            <option selected value="">Select Client</option>
+            <option value="JP Morgan">JP Morgan</option>
+            <option value="Nasdaq">Nasdaq</option>
+            <option value="Citi">Citi</option>
+        </select>
     </div>
     <div class="form-group">
-        <label>Program</label>
-        <input class="form-control" id="program" placeholder="Enter Program" required>
+        <label for="cpg">Client Program Group</label>
+        <select required class="form-control" id="cpg">
+            <option selected value="">Select Program Group</option>
+            <option value="CPG 1">CPG 1</option>
+            <option value="CPG 2">CPG 2</option>
+            <option value="CPG 3">CPG 3</option>
+        </select>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <div class="form-group">
+        <label for="cpg">Client Program</label>
+        <select required class="form-control" id="program">
+            <option selected value="">Select Program </option>
+            <option value="Program 1">Program 1</option>
+            <option value="program 2">Program 2</option>
+            <option value="program 3">Program 3</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Create Access Key</button>
 </form>
     

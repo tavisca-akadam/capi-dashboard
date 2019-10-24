@@ -16,6 +16,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { CreateKeyPopupComponent } from './dashboard/create-key-popup/create-key-popup.component';
 import { CreateKeyPopupContentComponent } from './dashboard/create-key-popup/create-key-popup-content/create-key-popup-content.component';
+import { CreateKeyAlertComponent } from './dashboard/create-key-popup/create-key-alert/create-key-alert.component';
+
 
 const routes: Routes = [
   {path: 'createkey', component:Dashboard2Component},
@@ -35,7 +37,8 @@ const routes: Routes = [
     HeaderComponent,
     Dashboard2Component,
     CreateKeyPopupComponent,
-    CreateKeyPopupContentComponent
+    CreateKeyPopupContentComponent,
+    CreateKeyAlertComponent
   ],
   imports: [
     BrowserModule,
