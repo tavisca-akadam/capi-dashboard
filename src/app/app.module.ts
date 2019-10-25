@@ -14,6 +14,7 @@ import { ButtonComponent } from './dashboard/key-list/key-list-item/button/butto
 import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { DialogueComponent } from './dashboard/key-list/key-list-item/dialogue/dialogue.component';
 
 const routes: Routes = [
   {path: 'createkey', component:Dashboard2Component},
@@ -31,7 +32,8 @@ const routes: Routes = [
     KeyComponent,
     ButtonComponent,
     HeaderComponent,
-    Dashboard2Component
+    Dashboard2Component,
+    DialogueComponent
   ],
   imports: [
     BrowserModule,

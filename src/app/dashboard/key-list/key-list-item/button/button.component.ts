@@ -15,16 +15,18 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.buttonState);
+    //this.ChangeAccessKeyStateService.changeAccessKeyState(this.buttonState, this.id);
   }
+      
   toggleKeyState(event) {
-    console.log(event.target);
-    const buttonEvent = event.target;
-    this.btnText = buttonEvent.innerText;
-    if (this.btnText === 'Activate') {
-        this.buttonState = false;
-    } else {
-        this.buttonState = true;
-    }
+    // console.log(event.target);
+    // const buttonEvent = event.target;
+    // this.btnText = buttonEvent.innerText;
+    // if (this.btnText === 'Activate') {
+    //     this.buttonState = false;
+    // } else {
+    //     this.buttonState = true;
+    // }
     this.ChangeAccessKeyStateService.changeAccessKeyState(this.id);
   }
 

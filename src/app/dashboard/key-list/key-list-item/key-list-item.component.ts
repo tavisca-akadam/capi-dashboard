@@ -8,7 +8,12 @@ import { KeyList } from 'src/app/shared/KeyList.model';
 })
 export class KeyListItemComponent implements OnInit {
   @Input() keyItem: KeyList;
+
   constructor() { }
 
   ngOnInit() {}
+
+  toggleState() {
+    this.keyItem.iskeyActive = !this.keyItem.iskeyActive;
+  }
 }
