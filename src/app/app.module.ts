@@ -14,6 +14,9 @@ import { ButtonComponent } from './dashboard/key-list/key-list-item/button/butto
 import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { CreateKeyPopupComponent } from './dashboard/create-key-popup/create-key-popup.component';
+import { CreateKeyPopupContentComponent } from './dashboard/create-key-popup/create-key-popup-content/create-key-popup-content.component';
+import { CreateKeyAlertComponent } from './dashboard/create-key-popup/create-key-alert/create-key-alert.component';
 import { DialogueComponent } from './dashboard/key-list/key-list-item/dialogue/dialogue.component';
 
 const routes: Routes = [
@@ -33,6 +36,9 @@ const routes: Routes = [
     ButtonComponent,
     HeaderComponent,
     Dashboard2Component,
+    CreateKeyPopupComponent,
+    CreateKeyPopupContentComponent,
+    CreateKeyAlertComponent,
     DialogueComponent
   ],
   imports: [
