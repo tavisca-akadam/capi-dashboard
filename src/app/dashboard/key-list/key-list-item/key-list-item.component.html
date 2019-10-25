@@ -3,7 +3,7 @@
         <app-key [receivedKey]="keyItem"></app-key>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3">
-            {{keyItem.updatedBy}}
+            last updated by :- <b>{{keyItem.updatedBy}} </b>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3">
             <app-button [buttonState]="keyItem.iskeyActive" [id]="keyItem.accessKey" ></app-button>
