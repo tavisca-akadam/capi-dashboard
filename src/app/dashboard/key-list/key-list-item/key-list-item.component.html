@@ -7,5 +7,6 @@
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3">
             <app-button [buttonState]="keyItem.iskeyActive" [id]="keyItem.accessKey" ></app-button>
+            <app-dialogue (toggleYes)="toggleState()" [id]="keyItem.accessKey"></app-dialogue>
     </div>
 </div>
