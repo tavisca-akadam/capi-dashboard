@@ -1,6 +1,6 @@
 <form (submit)="createKey($event)">
-    <div *ngIf="showBanner">
-        <app-create-key-alert [bannerType]="bannerType"></app-create-key-alert>
+    <div>
+        <app-create-key-alert [bannerType]="bannerType" ></app-create-key-alert>
     </div>
     <div class="form-group">
         <label for="clientName">Client Name</label>

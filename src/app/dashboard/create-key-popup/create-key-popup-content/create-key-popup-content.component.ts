@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CreateNewKeyService} from '../../../services/create-new-key.service'
+import {KeyList} from '../../../shared/keyList.model'
+import {NewClient} from '../../../shared/newClient.model'
 import { CreateKeyAlertComponent } from '../create-key-alert/create-key-alert.component';
 import { Alert } from 'selenium-webdriver';
 
@@ -8,9 +11,9 @@ import { Alert } from 'selenium-webdriver';
   styleUrls: ['./create-key-popup-content.component.css']
 })
 export class CreateKeyPopupContentComponent implements OnInit {
-  constructor() { }
-  showBanner:boolean = false;
-  bannerType:number;
+  constructor(private NewKey:CreateNewKeyService) { }
+  newAccessKey:KeyList;
+  bannerType:string;
   ngOnInit() {
   }
   createKey(event){
@@ -19,10 +22,18 @@ export class CreateKeyPopupContentComponent implements OnInit {
     const cpg=target.querySelector('#cpg').value
     const program=target.querySelector('#program').value
     if((client=="")||(cpg=="")||(program==""))
-    this.bannerType=4;
+    this.bannerType="Required";
     else{
-      this.bannerType=3;
+      this.NewKey.post(new NewClient(client,cpg,program,"ABCD"))
+      .subscribe(
+        key => {
+          this.newAccessKey=key;
+        }
+      );
+      if(!this.newAccessKey)
+        this.bannerType="Error";
+      else
+        this.bannerType="Success";
     }
-    this.showBanner=true;
   }
 }
