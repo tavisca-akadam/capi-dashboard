@@ -1,0 +1,27 @@
+[
+    {
+        "clientName": "citi",
+        "cpg": "CPG 1",
+        "program": "Program 1"
+    },
+    {
+        "clientName": "amex",
+        "cpg": "CPG 2",
+        "program": "Program 2"
+    },
+    {
+        "clientName": "capital-one",
+        "cpg": "CPG 3",
+        "program": "Program 3"
+    },
+    {
+        "clientName": "jp Morgan",
+        "cpg": "CPG 4",
+        "program": "Program 4"
+    },
+    {
+        "clientName": "vodafone",
+        "cpg": "CPG 5",
+        "program": "Program 5"
+    }
+]

@@ -6,27 +6,21 @@
         <label for="clientName">Client Name</label>
         <select required class="form-control" id="clientName">
             <option selected value="">Select Client</option>
-            <option value="JP Morgan">JP Morgan</option>
-            <option value="Nasdaq">Nasdaq</option>
-            <option value="Citi">Citi</option>
+            <option *ngFor="let noncapiClient of nonCapiClientList" value="noncapiClient.clientName">{{noncapiClient.clientName}}</option>
         </select>
     </div>
     <div class="form-group">
         <label for="cpg">Client Program Group</label>
         <select required class="form-control" id="cpg">
             <option selected value="">Select Program Group</option>
-            <option value="CPG 1">CPG 1</option>
-            <option value="CPG 2">CPG 2</option>
-            <option value="CPG 3">CPG 3</option>
+            <option *ngFor="let noncapiClient of nonCapiClientList" value="noncapiClient.cpg">{{noncapiClient.cpg}}</option>
         </select>
     </div>
     <div class="form-group">
         <label for="cpg">Client Program</label>
         <select required class="form-control" id="program">
             <option selected value="">Select Program </option>
-            <option value="Program 1">Program 1</option>
-            <option value="program 2">Program 2</option>
-            <option value="program 3">Program 3</option>
+            <option *ngFor="let noncapiClient of nonCapiClientList" value="noncapiClient.program">{{noncapiClient.program}}</option>
         </select>
     </div>
     <button class="btn btn-primary" type="submit">Create Access Key</button>

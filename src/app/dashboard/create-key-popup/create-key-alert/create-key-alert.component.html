@@ -22,3 +22,9 @@
         <strong>All fields are required</strong>  
     </div>
 </div>
+<div class ="container"  *ngIf="bannerType=='Creating'">
+    <div class = "alert alert-warning alert-dismissible fade show" id="CreatingAlert">
+        <button type = "button" class = "close" data-dismiss = "alert">&times;</button>
+        <strong>Creating...</strong>  
+    </div>
+</div>
