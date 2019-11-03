@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { ChangeStateService } from 'src/app/services/change-state.service';
 
 @Component({
@@ -9,25 +9,23 @@ import { ChangeStateService } from 'src/app/services/change-state.service';
 export class ButtonComponent implements OnInit {
   @Input() buttonState: boolean;
   @Input() id: string;
-  btnText: string;
+
+  @ViewChild('checkbox', { static: false }) checkbox: ElementRef;
 
   constructor(private ChangeAccessKeyStateService: ChangeStateService) {}
 
   ngOnInit() {
     console.log(this.buttonState);
-    //this.ChangeAccessKeyStateService.changeAccessKeyState(this.buttonState, this.id);
   }
-      
+
+  ngAfterViewInit() {
+    console.log(this.checkbox);
+    this.checkbox.nativeElement.checked = this.buttonState;
+  }
+
   toggleKeyState(event) {
-    // console.log(event.target);
-    // const buttonEvent = event.target;
-    // this.btnText = buttonEvent.innerText;
-    // if (this.btnText === 'Activate') {
-    //     this.buttonState = false;
-    // } else {
-    //     this.buttonState = true;
-    // }
+    console.log(event.target.checked);
     this.ChangeAccessKeyStateService.changeAccessKeyState(this.id);
-  }
+ }
 
 }
