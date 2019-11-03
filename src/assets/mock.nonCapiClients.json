@@ -1,0 +1,32 @@
+[
+    {
+        "clientName": "citi",
+        "ClientId" : "citi_123",
+        "cpg": "CPG 1",
+        "program": "Program 1"
+    },
+    {
+        "clientName": "amex",
+        "ClientId" : "amex_123",
+        "cpg": "CPG 2",
+        "program": "Program 2"
+    },
+    {
+        "clientName": "capital-one",
+        "ClientId" : "capital-one_123",
+        "cpg": "CPG 3",
+        "program": "Program 3"
+    },
+    {
+        "clientName": "jp Morgan",
+        "ClientId" : "jp Morgan_123",
+        "cpg": "CPG 4",
+        "program": "Program 4"
+    },
+    {
+        "clientName": "vodafone",
+        "ClientId" : "vodafone_123",
+        "cpg": "CPG 5",
+        "program": "Program 5"
+    }
+]
