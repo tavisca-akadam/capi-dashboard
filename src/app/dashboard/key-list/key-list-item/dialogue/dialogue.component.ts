@@ -22,6 +22,7 @@ export class DialogueComponent implements OnInit {
     // this.toggleYes.emit();
     this.changeKeyState.onChangeKeyState(this.keyItem).subscribe((response) => {
       this.updatedKeyItem.emit(response);
+      console.log(response);
     });
     console.log(this.keyItem);
   }

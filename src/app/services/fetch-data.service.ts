@@ -8,7 +8,7 @@ import { KeyList } from '../shared/KeyList.model';
 })
 export class FetchDataService {
  // http://localhost:4200/assets/mock.data.json
-  url = 'https://localhost:44302/accesskey/getallkeys';
+  url = 'https://localhost:44302/accesskey/getall';
   //url = 'http://localhost:4200/assets/mock.data.json';
   constructor(private http: HttpClient) {
    }

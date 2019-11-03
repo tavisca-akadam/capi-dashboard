@@ -6,7 +6,7 @@
     <div class="col-md-6 col-sm-6 col-xs-6">
         <div class="row">
                 <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
-                <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem"></app-dialogue>
+                <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem=$event"></app-dialogue>
         </div> 
         <div class="row rowUpdatedByName">
             <p class="lead">last updated by  <b>{{keyItem.updatedBy}} </b></p>        

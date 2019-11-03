@@ -17,7 +17,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
     console.log(this.buttonState);
     this.dataAttribute = `#${this.id}`;
-    console.log(this.id);
+    //console.log(this.id);
     //this.ChangeAccessKeyStateService.changeAccessKeyState(this.buttonState, this.id);
   }
       
