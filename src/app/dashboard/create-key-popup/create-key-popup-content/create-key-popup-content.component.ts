@@ -26,7 +26,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
           this.validateIfCreated(clientName,cpg,program,updatedBy,id);
         },
         (error) => {
-          this.bannerType="Exists";
+          this.bannerType="Error";
         }
       );
   }

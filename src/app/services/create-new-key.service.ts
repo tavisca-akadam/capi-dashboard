@@ -8,7 +8,7 @@ import { NewClient } from '../shared/newClient.model';
   providedIn: 'root'
 })
 export class CreateNewKeyService {
-  url='https://localhost:44302/accesskey/create';
+  url='https://localhost:44302/accesskey/generatenew';
   constructor(private http:HttpClient) { }
   post(newClient:NewClient):Observable<KeyList>{
     return this.http.post<KeyList>(this.url,newClient);
