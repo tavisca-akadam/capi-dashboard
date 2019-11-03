@@ -2,11 +2,19 @@
     <div class="col-md-6 col-sm-6 col-xs-6">
         <app-key [receivedKey]="keyItem"></app-key>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3">
-            last updated by :- <b>{{keyItem.updatedBy}} </b>
+   
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="row">
+                <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
+                <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem"></app-dialogue>
+        </div> 
+        <div class="row rowUpdatedByName">
+            <p class="lead">last updated by  <b>{{keyItem.updatedBy}} </b></p>        
+        </div>
+            
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                
+        </div>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3">
-            <app-button [buttonState]="keyItem.iskeyActive" [id]="keyItem.accessKey" ></app-button>
-            <app-dialogue (toggleYes)="toggleState()" [id]="keyItem.accessKey"></app-dialogue>
-    </div>
+     
 </div>

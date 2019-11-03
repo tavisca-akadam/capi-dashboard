@@ -8,6 +8,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 export class DialogueComponent implements OnInit {
   @Output() toggleYes = new EventEmitter();
   @Input() id;
+  @Input() keyItem;
   
   constructor() { }
 
@@ -15,7 +16,8 @@ export class DialogueComponent implements OnInit {
   }
 
   onClick() {
-    this.toggleYes.emit();
+    // this.toggleYes.emit();
+    console.log(this.keyItem);
   }
 
 }
