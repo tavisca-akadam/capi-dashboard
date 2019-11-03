@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchNonCapiClientsService } from '../../services/fetch-non-capi-clients.service';
+import { NonCapiClient } from '../../shared/nonCapiClient.model';
 
 @Component({
   selector: 'app-create-key-popup',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateKeyPopupComponent implements OnInit {
 
-  constructor() { }
+  nonCapiClientList:NonCapiClient[];
+  constructor(private NonCapiClient:FetchNonCapiClientsService) { }
 
   ngOnInit() {
+    this.NonCapiClient.getAll().subscribe(clients=>{
+      this.nonCapiClientList=clients;
+    })
   }
 
 }

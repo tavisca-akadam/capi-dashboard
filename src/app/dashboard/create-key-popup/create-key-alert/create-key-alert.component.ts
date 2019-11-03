@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-create-key-alert',
@@ -6,10 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./create-key-alert.component.css']
 })
 export class CreateKeyAlertComponent implements OnInit {
-  @Input() bannerType:number;
+  @Input() bannerType:string;
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }
