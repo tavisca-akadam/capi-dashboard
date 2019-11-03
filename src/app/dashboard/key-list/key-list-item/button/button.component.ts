@@ -22,15 +22,7 @@ export class ButtonComponent implements OnInit {
   }
       
   toggleKeyState(event) {
-    // console.log(event.target);
-    // const buttonEvent = event.target;
-    // this.btnText = buttonEvent.innerText;
-    // if (this.btnText === 'Activate') {
-    //     this.buttonState = false;
-    // } else {
-    //     this.buttonState = true;
-    // }
-    this.ChangeAccessKeyStateService.changeAccessKeyState(this.id);
+  
   }
 
 }
