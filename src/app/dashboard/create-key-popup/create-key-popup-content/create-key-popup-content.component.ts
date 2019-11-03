@@ -18,34 +18,46 @@ export class CreateKeyPopupContentComponent implements OnInit {
   bannerType:string;
   ngOnInit() {
   }
-  requestApiToCreateKey(client,cpg,program,updatedBy){
-    this.NewKey.post(new NewClient(client,cpg,program,updatedBy))
+  requestApiToCreateKey(clientName,cpg,program,updatedBy,id){
+    this.NewKey.post(new NewClient(clientName,id,cpg,program,updatedBy))
       .subscribe(
-        key => {
+        (key) => {
           this.newAccessKey=key;
+          this.validateIfCreated(clientName,cpg,program,updatedBy,id);
+        },
+        (error) => {
+          this.bannerType="Exists";
         }
       );
   }
-  validateIfCreated(client,cpg,program,updatedBy){
-    console.log(this.newAccessKey);
-    this.bannerType="Creating";
+  validateIfCreated(clientName,cpg,program,updatedBy,id){
     if(this.newAccessKey)    
-      if((this.newAccessKey.clientName==client)&&(this.newAccessKey.updatedBy==updatedBy)&&(this.newAccessKey.iskeyActive==false)&&this.newAccessKey.accessKey)
+      if((this.newAccessKey.clientName==clientName)&&(this.newAccessKey.updatedBy==updatedBy)&&(this.newAccessKey.iskeyActive==false)&&this.newAccessKey.accessKey)
         this.bannerType="Success";
       else
         this.bannerType="Error";
   }
   createKey(event){
     var target=event.target
-    const client=target.querySelector('#clientName').value
+    const clientName=target.querySelector('#clientName').value
     const cpg=target.querySelector('#cpg').value
     const program=target.querySelector('#program').value
     const updatedBy="CuttingChai";
-    if((client=="")||(cpg=="")||(program==""))
+    const id=this.getIdOfClinet(clientName);
+    if((clientName=="")||(cpg=="")||(program==""))
     this.bannerType="Required";
     else{
-      this.requestApiToCreateKey(client,cpg,program,updatedBy);
-      this.validateIfCreated(client,cpg,program,updatedBy);
+      this.bannerType="Creating";
+      this.requestApiToCreateKey(clientName,cpg,program,updatedBy,id);
     }
+  }
+  getIdOfClinet(clientName):String{
+    var id="";
+    this.nonCapiClientList.forEach(nonCapiClient => {
+      if(nonCapiClient.clientName==clientName){
+        id=nonCapiClient.ClientId;
+      }
+    });
+    return id;
   }
 }
