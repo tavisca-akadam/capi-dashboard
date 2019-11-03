@@ -1,8 +1,10 @@
 <button 
     type="button"
-    class="btn"
+    class="btn button"
     [ngClass]="{'btn-primary': buttonState == true, 'btn-danger': buttonState == false}"
-    (click)="toggleKeyState($event)"
+    data-toggle="modal"
+    [attr.data-target]="'#' + id"
     >
     {{ buttonState ? 'Activate' : 'Deactivate' }}
 </button>
+<!-- (click)="toggleKeyState($event)" -->
