@@ -1,5 +1,29 @@
-<div 
-    class="jumbotron jumbotron-fluid"
-    *ngFor="let keyItem of keyListData">
-    <app-key-list-item [keyItem]="keyItem"></app-key-list-item>
+<!-- <table class="table table-striped w-100 p-3">
+        <thead>
+                <th>clientId</th>
+                <th>clientName</th>
+                <th>accessKey</th>
+                <th>Key State</th>
+                <th>updatedBy</th>
+            </thead>
+            <tbody>
+            <tr 
+                *ngFor="let keyItem of keyListData">
+               <app-key-list-item [keyItem]="keyItem"></app-key-list-item> 
+                <td>{{keyItem.clientId}}</td>
+                <td>{{ keyItem.clientName }} </td>
+                <td>{{ keyItem.accessKey }}</td>
+                <td> 
+                                <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
+                                <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem=$event"></app-dialogue>
+                </td>
+                <td>{{keyItem.updatedBy}} </td>
+            
+            </tr>
+            </tbody>
+</table> -->
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12"
+*ngFor="let keyItem of keyListData">
+               <app-key-list-item [keyItem]="keyItem"></app-key-list-item> 
 </div>
+

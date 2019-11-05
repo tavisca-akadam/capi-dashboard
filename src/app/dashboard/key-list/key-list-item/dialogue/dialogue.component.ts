@@ -11,6 +11,7 @@ export class DialogueComponent implements OnInit {
   @Output() toggleYes = new EventEmitter();
   @Input() id;
   @Input() keyItem;
+  @Input() buttonState;
   @Output() updatedKeyItem = new EventEmitter<KeyList>();
   
   constructor(private changeKeyState: ChangeKeyStateService) { }

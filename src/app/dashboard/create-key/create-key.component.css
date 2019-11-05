@@ -1,5 +1,6 @@
 button
 {
-    background-color: #7986cb;
+    background-color: #4b66f3;
     color: white;
+    box-shadow: 2px 2px 5px 0px #00000047;
 }

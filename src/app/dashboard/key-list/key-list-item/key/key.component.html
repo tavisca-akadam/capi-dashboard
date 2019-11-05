@@ -1,10 +1,15 @@
-<!-- <div class="input-group"> -->
-        <!-- <div class="input-group-prepend"> -->
-          <div>
-              <p id="clientName">{{ receivedKey.clientName }} </p>
-          </div>
-           
-          <p id="accessKey">{{ receivedKey.accessKey }}</p>
-        <!-- </div> -->
-        <!-- <input type="text" id="accessKey" class="form-control" value="{{ receivedKey.accessKey }}" disabled> -->
-<!-- </div> -->
+<div class="input-group"> 
+        <div class="input-group-prepend col-md-3 col-sm-3 col-xs-3">
+              <p id="clientName">{{ receivedKey.clientName }}</p> 
+        </div> 
+        <input type="text" id="accessKey" class="form-control" value="{{ receivedKey.accessKey }}" disabled>
+</div>
+<!-- <div class="input-group col-md-2 col-sm-2 col-xs-2">
+    {{ receivedKey.clientName }}
+</div>
+<div class="input-group col-md-3 col-sm-3 col-xs-3">
+    {{ receivedKey.accessKey }}
+</div> -->
+
+  <!-- <td>{{ receivedKey.clientName }} </td>
+  <td>{{ receivedKey.accessKey }}</td> -->

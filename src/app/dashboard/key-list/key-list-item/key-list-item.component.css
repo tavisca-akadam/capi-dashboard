@@ -10,3 +10,11 @@
 .lead {
     padding-top: 25px;
 }
+.last-updated{
+    padding-top: 7px;
+    font-size: 14px;
+}
+.client-id{
+    font-size: 18px;
+    padding-top: 7px;
+}
