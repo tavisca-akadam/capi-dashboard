@@ -1,0 +1,34 @@
+[
+    {
+        "classicId": "A",
+        "name" : "citi",
+        "tenantId": "C",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    },
+    {
+        "classicId": "A",
+        "name" : "SBI",
+        "tenantId": "C",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    },
+    {
+        "classicId": "A",
+        "name" : "Baroda",
+        "tenantId": "C",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    },
+    {
+        "classicId": "A",
+        "name" : "Axis",
+        "tenantId": "C",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    }
+]

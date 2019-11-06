@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label for="clientName">Client</label>
+    <select required class="form-control" id="client">
+        <option selected value="">Select Client</option>
+        <option *ngFor="let client of clientList" value="{{client.id}}">{{client.name}}</option>
+    </select>
+</div>

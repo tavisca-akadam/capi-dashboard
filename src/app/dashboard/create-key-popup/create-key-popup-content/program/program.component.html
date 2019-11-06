@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label for="program">Program </label>
+    <select required class="form-control" id="program">
+        <option selected value="">Select Program</option>
+        <option *ngFor="let program of programList" value="{{program.id}}">{{program.name}}</option>
+    </select>
+</div>

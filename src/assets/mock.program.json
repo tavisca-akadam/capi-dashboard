@@ -1,0 +1,30 @@
+[
+    {
+        "classicId": "A",
+        "name" : "citi_Program",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    },
+    {
+        "classicId": "A",
+        "name" : "SBI_Program",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    },
+    {
+        "classicId": "A",
+        "name" : "Baroda_Program",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    },
+    {
+        "classicId": "A",
+        "name" : "Axis_Program",
+        "id": "P",
+        "createdOn":"A",
+        "lastUpdatedOn":"A"
+    }
+]
