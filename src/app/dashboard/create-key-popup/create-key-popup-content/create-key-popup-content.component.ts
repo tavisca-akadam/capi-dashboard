@@ -21,6 +21,8 @@ export class CreateKeyPopupContentComponent implements OnInit {
     this.loadClient();
   }
   loadClient(){
+    this.displayCPGList=false;
+    this.displayProgramList=false;
     this.hierarchy.getClients().subscribe(
       clients => {
         this.clientList = clients;
@@ -29,6 +31,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
     );
   }
   loadProgramGroup(client : Client){
+    this.displayProgramList=false;
     this.hierarchy.getProgramGroup(client.id).subscribe(
       cpgs => {
         this.programGroupList = cpgs;
