@@ -12,43 +12,38 @@ export class CreateKeyPopupContentComponent implements OnInit {
   constructor(private hierarchy : FetchDataFromHierarchyApiService) { }
   bannerType:string;
   clientList:Client[];
+  displayClientList : boolean;
   programList:Program[];
+  displayProgramList : boolean;
   programGroupList:ProgramGroup[];
+  displayCPGList : boolean;
   ngOnInit() {
     this.loadClient();
   }
   loadClient(){
     this.hierarchy.getClients().subscribe(
-      clients =>{
-        this.clientList=clients;
+      clients => {
+        this.clientList = clients;
+        this.displayClientList=true;
       }
     );
   }
-  loadProgramGroup(){
-    this.hierarchy.getProgramGroup("").subscribe(
-      programGroups =>{
-        this.programGroupList=programGroups;
+  loadProgramGroup(client : Client){
+    this.hierarchy.getProgramGroup(client.id).subscribe(
+      cpgs => {
+        this.programGroupList = cpgs;
+        this.displayCPGList=true;
       }
     );
   }
-  loadProgram(){
-    this.hierarchy.getPrograms("").subscribe(
-      programs =>{
-        this.programList=programs;
+  loadProgram(programGroup : ProgramGroup){
+    this.hierarchy.getPrograms(programGroup.id).subscribe(
+      programs => {
+        this.programList = programs;
+        this.displayProgramList=true;
       }
-    )
+    );
   }
   createKey(event){
-    var target=event.target;
-    const clientName=document.getElementById("client");
-    console.log(clientName);
-    const cpg=target.querySelector('#cpg').value
-    const program=target.querySelector('#program').value
-    const updatedBy="CuttingChai";
-    // if((clientName=="")||(cpg=="")||(program==""))
-    // this.bannerType="Required";
-    // else{
-    //   this.bannerType="Creating";
-    // }
   }
 }

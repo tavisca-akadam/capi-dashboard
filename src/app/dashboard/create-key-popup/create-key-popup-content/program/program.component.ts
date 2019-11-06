@@ -8,8 +8,12 @@ import {FetchDataFromHierarchyApiService} from "../../../../services/fetch-data-
 })
 export class ProgramComponent implements OnInit {
   @Input() programList:Program[];
+  @Input() displayList:boolean;
+  selectedProgram : Program;
   constructor(private hierarchyData:FetchDataFromHierarchyApiService) { }
   ngOnInit() {
   }
-
+  getSelectedProgram(){
+    console.log(this.selectedProgram);
+  }
 }
