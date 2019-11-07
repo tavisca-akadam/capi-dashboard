@@ -8,6 +8,7 @@ import { EventEmitter } from 'events';
 })
 export class CreateKeyAlertComponent implements OnInit {
   @Input() bannerType:string;
+  @Input() bannerData:string;
   constructor() { }
 
   ngOnInit() {

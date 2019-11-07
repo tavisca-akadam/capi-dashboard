@@ -1,6 +1,5 @@
-import { Component, OnInit , Input , EventEmitter, Output} from '@angular/core';
-import {Client} from "../../../../shared/client.model"
-import {FetchDataFromHierarchyApiService} from "../../../../services/fetch-data-from-hierarchy-api.service"
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Client } from "../../../../shared/client.model"
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -8,13 +7,13 @@ import {FetchDataFromHierarchyApiService} from "../../../../services/fetch-data-
 })
 export class ClientComponent implements OnInit {
   @Output() onSelect = new EventEmitter();
-  @Input() clientList:Client[];
-  @Input() displayList:boolean;
-  selectedClient : Client;
-  constructor(private hierarchyData:FetchDataFromHierarchyApiService) { }
+  @Input() clientList: Client[] = [];
+  @Input() displayList: boolean;
+  selectedClient: Client;
+  constructor() {  }
   ngOnInit() {
   }
-  getSelectedClient(){
+  getSelectedClient() {
     this.onSelect.next(this.selectedClient);
   }
 }

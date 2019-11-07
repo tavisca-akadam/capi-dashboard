@@ -1,30 +1,11 @@
-[
-    {
-        "classicId": "A",
-        "name" : "citi_Program",
-        "id": "P",
-        "createdOn":"A",
-        "lastUpdatedOn":"A"
-    },
-    {
-        "classicId": "A",
-        "name" : "SBI_Program",
-        "id": "P",
-        "createdOn":"A",
-        "lastUpdatedOn":"A"
-    },
-    {
-        "classicId": "A",
-        "name" : "Baroda_Program",
-        "id": "P",
-        "createdOn":"A",
-        "lastUpdatedOn":"A"
-    },
-    {
-        "classicId": "A",
-        "name" : "Axis_Program",
-        "id": "P",
-        "createdOn":"A",
-        "lastUpdatedOn":"A"
-    }
-]
+{
+    "programs": [
+        {
+            "classicId": "1031",
+            "name": "USAA Eagle Points",
+            "id": "3yc16lj9slc",
+            "createdOn": "2019-10-03T11:06:46",
+            "lastUpdatedOn": "2019-10-03T11:06:46"
+        }
+    ]
+}

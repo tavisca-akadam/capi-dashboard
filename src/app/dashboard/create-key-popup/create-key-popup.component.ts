@@ -5,7 +5,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./create-key-popup.component.css']
 })
 export class CreateKeyPopupComponent implements OnInit {
-  @Input() display:String;
   constructor() { }
   ngOnInit() { }
 }

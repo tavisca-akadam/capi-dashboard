@@ -1,6 +1,5 @@
 import { Component, OnInit ,Input,EventEmitter, Output} from '@angular/core';
 import {ProgramGroup} from "../../../../shared/programGroup.model"
-import {FetchDataFromHierarchyApiService} from "../../../../services/fetch-data-from-hierarchy-api.service"
 @Component({
   selector: 'app-program-group',
   templateUrl: './program-group.component.html',
@@ -11,7 +10,7 @@ export class ProgramGroupComponent implements OnInit {
   @Input() programGroupList:ProgramGroup[];
   @Input() displayList:boolean;
   selectedProgramGroup : ProgramGroup;
-  constructor(private hierarchyData:FetchDataFromHierarchyApiService) { }
+  constructor() { }
 
   ngOnInit() {
   }

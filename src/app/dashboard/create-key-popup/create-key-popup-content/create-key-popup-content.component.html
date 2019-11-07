@@ -1,8 +1,8 @@
 <form (submit)="createKey($event)">
-    <app-create-key-alert [bannerType]="bannerType" ></app-create-key-alert>
+    <app-create-key-alert [bannerType]="bannerType" [bannerData]="bannerData" ></app-create-key-alert>
     <app-client [clientList]="clientList" [displayList]="displayClientList" (onSelect)="loadProgramGroup($event)"></app-client>
     <app-program-group [programGroupList]="programGroupList" [displayList]="displayCPGList" (onSelect)="loadProgram($event)"></app-program-group>
-    <app-program [programList]="programList" [displayList]="displayProgramList"></app-program>
+    <app-program [programList]="programList" [displayList]="displayProgramList" (onSelect)="selectProgram($event)"></app-program>
     <button class="btn btn-primary" type="submit">Create Access Key</button>
 </form>
     

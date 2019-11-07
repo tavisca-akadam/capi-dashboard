@@ -1,19 +1,19 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit ,EventEmitter , Input,Output} from '@angular/core';
 import {Program} from "../../../../shared/program.model"
-import {FetchDataFromHierarchyApiService} from "../../../../services/fetch-data-from-hierarchy-api.service"
 @Component({
   selector: 'app-program',
   templateUrl: './program.component.html',
   styleUrls: ['./program.component.css']
 })
 export class ProgramComponent implements OnInit {
+  @Output() onSelect = new EventEmitter();
   @Input() programList:Program[];
   @Input() displayList:boolean;
   selectedProgram : Program;
-  constructor(private hierarchyData:FetchDataFromHierarchyApiService) { }
+  constructor() { }
   ngOnInit() {
   }
   getSelectedProgram(){
-    console.log(this.selectedProgram);
+    this.onSelect.next(this.selectedProgram);
   }
 }
