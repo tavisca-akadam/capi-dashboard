@@ -8,10 +8,14 @@ import { KeyList } from 'src/app/shared/KeyList.model';
 })
 export class KeyListItemComponent implements OnInit {
   @Input() keyItem: KeyList;
+  accessKey:string;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //Appending 'q' just to add a letter before id according to HTML 5 id specifications
+    this.accessKey = `q${this.keyItem.accessKey}`;
+  }
 
   toggleState() {
     this.keyItem.iskeyActive = !this.keyItem.iskeyActive;

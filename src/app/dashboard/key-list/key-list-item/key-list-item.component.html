@@ -1,12 +1,53 @@
+<!-- <div class="row key-item-block">
+    <div class="col-md-2 col-sm-2 col-xs-2">
+        <p class="lead">{{keyItem.clientId}}</p>
+    </div>
+    <div class="col-md-5 col-sm-5 col-xs-5">
+        <app-key [receivedKey]="keyItem"></app-key>   
+    </div>
+    
+    <div class="col-md-5 col-sm-5 col-xs-5">
+        <div class="row">
+                <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
+                <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem=$event"></app-dialogue>
+        </div> 
+        <div class="row rowUpdatedByName">
+            <p class="lead">last updated by  <b>{{keyItem.updatedBy}} </b></p>        
+        </div>
+            
+    </div>
+     
+</div> -->
+
+
 <div class="row key-item-block">
+    <div class="col-md-2 col-sm-2 col-xs-2">
+       <p class="client-id">{{keyItem.clientId}}</p>
+    </div>
     <div class="col-md-6 col-sm-6 col-xs-6">
-        <app-key [receivedKey]="keyItem"></app-key>
+        <app-key [receivedKey]="keyItem"></app-key>   
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3">
-            last updated by :- <b>{{keyItem.updatedBy}} </b>
+    <div class="col-md-2 col-sm-2 col-xs-2">
+        <p>
+            <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
+            <app-dialogue [buttonState]="keyItem.iskeyActive" (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem=$event"></app-dialogue>
+        </p>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3">
-            <app-button [buttonState]="keyItem.iskeyActive" [id]="keyItem.accessKey" ></app-button>
-            <app-dialogue (toggleYes)="toggleState()" [id]="keyItem.accessKey"></app-dialogue>
+    <div class="col-md-2 col-sm-2 col-xs-2">
+            <p class="last-updated">last updated by  <b>{{keyItem.updatedBy}}</b></p>
     </div>
 </div>
+
+
+
+
+        <!-- <td>{{keyItem.clientId}}</td>
+        <td>{{ keyItem.clientName }} </td>
+        <td>{{ keyItem.accessKey }}</td>
+        <app-key [receivedKey]="keyItem"></app-key>   
+        <td> 
+            <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
+            <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem=$event"></app-dialogue>
+        </td>
+        <td>last updated by  <b>{{keyItem.updatedBy}} </b></td> -->
+

@@ -1,6 +1,26 @@
 .button { 
   width: 100%;
-  max-width: 120px;
+  /* max-width: 120px; */
   table-layout: fixed;
   border-collapse: collapse;
+  box-shadow: 2px 2px 5px 0px #00000047;
+}
+.btn-danger{
+  color: black;
+  background-color: #dc354585;
+  border-color: #dc3545;
+}
+.btn-primary{
+  color: black;
+  background-color: #0062cc9c;
+  border-color: #1128f7fc;
+
+}
+.btn-danger:hover{
+  background-color: #dc3545;
+  color: white;
+}
+.btn-primary:hover{
+  background-color: blue;
+  color:white;
 }

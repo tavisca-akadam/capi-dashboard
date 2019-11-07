@@ -23,11 +23,11 @@ export class SortComponent implements OnInit {
     {
       case 'a-z':
           console.log('a-z sort');
-          this.keyListData.sort((a, b) => (a.clientName > b.clientName) ? 1 : -1);
+          this.keyListData.sort((a, b) => (a.clientName.toLowerCase() > b.clientName.toLowerCase()) ? 1 : -1);
           break;
       case 'z-a':
           console.log('z-a sort');
-          this.keyListData.sort((a, b) => (a.clientName < b.clientName) ? 1 : -1);
+          this.keyListData.sort((a, b) => (a.clientName.toLowerCase() < b.clientName.toLowerCase()) ? 1 : -1);
           break;
 
     }

@@ -1,4 +1,13 @@
-#clientNameStyle
+#clientName
 {
-    font-weight: bolder;
+     /* font-family: 'McLaren', cursive;  */
+    font-size: 18px;
+    padding-top: 7px;
 }
+
+#accessKey
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+

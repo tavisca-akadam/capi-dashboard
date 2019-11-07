@@ -2,3 +2,19 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+.rowUpdatedByName
+{
+    margin-top: 10px;
+}
+.lead {
+    padding-top: 25px;
+}
+.last-updated{
+    padding-top: 7px;
+    font-size: 14px;
+}
+.client-id{
+    font-size: 18px;
+    padding-top: 7px;
+}

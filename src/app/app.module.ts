@@ -18,9 +18,13 @@ import { CreateKeyPopupComponent } from './dashboard/create-key-popup/create-key
 import { CreateKeyPopupContentComponent } from './dashboard/create-key-popup/create-key-popup-content/create-key-popup-content.component';
 import { CreateKeyAlertComponent } from './dashboard/create-key-popup/create-key-alert/create-key-alert.component';
 import { DialogueComponent } from './dashboard/key-list/key-list-item/dialogue/dialogue.component';
+import { StatusAlertComponent } from './dashboard/key-list/key-list-item/status-alert/status-alert.component';
+import { AlertBannerComponent } from './dashboard/alert-banner/alert-banner.component';
+import { AlertService } from './services/alert.service';
 import { ClientComponent } from './dashboard/create-key-popup/create-key-popup-content/client/client.component';
 import { ProgramGroupComponent } from './dashboard/create-key-popup/create-key-popup-content/program-group/program-group.component';
 import { ProgramComponent } from './dashboard/create-key-popup/create-key-popup-content/program/program.component';
+
 
 const routes: Routes = [
   {path: 'createkey', component:Dashboard2Component},
@@ -43,6 +47,8 @@ const routes: Routes = [
     CreateKeyPopupContentComponent,
     CreateKeyAlertComponent,
     DialogueComponent,
+    StatusAlertComponent,
+    AlertBannerComponent,
     ClientComponent,
     ProgramGroupComponent,
     ProgramComponent
@@ -54,7 +60,7 @@ const routes: Routes = [
     RouterModule,
     RouterModule.forRoot(routes, { enableTracing: true })
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
