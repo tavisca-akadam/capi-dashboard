@@ -1,0 +1,8 @@
+<div class="form-group">
+    <label for="cpg">Program Group</label>
+    <select required class="form-control" id="cpg" [(ngModel)]="selectedProgramGroup" (change)="getSelectedProgramGroup()">
+        <ng-container *ngFor="let programGroup of programGroupList">
+            <option *ngIf="displayList" [ngValue]="programGroup" >{{programGroup.name}}</option>
+        </ng-container>
+    </select>
+</div>

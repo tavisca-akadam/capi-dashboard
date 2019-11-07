@@ -21,6 +21,10 @@ import { DialogueComponent } from './dashboard/key-list/key-list-item/dialogue/d
 import { StatusAlertComponent } from './dashboard/key-list/key-list-item/status-alert/status-alert.component';
 import { AlertBannerComponent } from './dashboard/alert-banner/alert-banner.component';
 import { AlertService } from './services/alert.service';
+import { ClientComponent } from './dashboard/create-key-popup/create-key-popup-content/client/client.component';
+import { ProgramGroupComponent } from './dashboard/create-key-popup/create-key-popup-content/program-group/program-group.component';
+import { ProgramComponent } from './dashboard/create-key-popup/create-key-popup-content/program/program.component';
+
 
 const routes: Routes = [
   {path: 'createkey', component:Dashboard2Component},
@@ -44,7 +48,10 @@ const routes: Routes = [
     CreateKeyAlertComponent,
     DialogueComponent,
     StatusAlertComponent,
-    AlertBannerComponent
+    AlertBannerComponent,
+    ClientComponent,
+    ProgramGroupComponent,
+    ProgramComponent
   ],
   imports: [
     BrowserModule,

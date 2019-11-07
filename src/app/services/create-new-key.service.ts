@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {observable, Observable} from 'rxjs'
-import { KeyList } from '../shared/KeyList.model';
-import { NewClient } from '../shared/newClient.model';
+import {AccessKeyResponse} from '../shared/accessKeyResponse.model'
+import { NewClientRequest } from '../shared/newClientRequest.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { NewClient } from '../shared/newClient.model';
 export class CreateNewKeyService {
   url='https://localhost:44302/accesskey/generatenew';
   constructor(private http:HttpClient) { }
-  post(newClient:NewClient):Observable<KeyList>{
-    return this.http.post<KeyList>(this.url,newClient);
+  post(newClient:NewClientRequest):Observable<AccessKeyResponse>{
+    return this.http.post<AccessKeyResponse>(this.url,newClient);
   }
 }

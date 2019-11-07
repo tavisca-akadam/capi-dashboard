@@ -1,28 +1,8 @@
 <form (submit)="createKey($event)">
-    <div>
-        <app-create-key-alert [bannerType]="bannerType" ></app-create-key-alert>
-    </div>
-    <div class="form-group">
-        <label for="clientName">Client Name</label>
-        <select required class="form-control" id="clientName">
-            <option selected value="">Select Client</option>
-            <option *ngFor="let noncapiClient of nonCapiClientList" value="{{noncapiClient.clientName}}">{{noncapiClient.clientName}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="cpg">Client Program Group</label>
-        <select required class="form-control" id="cpg">
-            <option selected value="">Select Program Group</option>
-            <option *ngFor="let noncapiClient of nonCapiClientList" value="{{noncapiClient.cpg}}">{{noncapiClient.cpg}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="program">Client Program</label>
-        <select required class="form-control" id="program">
-            <option selected value="">Select Program </option>
-            <option *ngFor="let noncapiClient of nonCapiClientList" value="{{noncapiClient.program}}">{{noncapiClient.program}}</option>
-        </select>
-    </div>
+    <app-create-key-alert [bannerType]="bannerType" [bannerData]="bannerData" ></app-create-key-alert>
+    <app-client [clientList]="clientList" [displayList]="displayClientList" (onSelect)="loadProgramGroup($event)"></app-client>
+    <app-program-group [programGroupList]="programGroupList" [displayList]="displayCPGList" (onSelect)="loadProgram($event)"></app-program-group>
+    <app-program [programList]="programList" [displayList]="displayProgramList" (onSelect)="selectProgram($event)"></app-program>
     <button class="btn btn-primary" type="submit">Create Access Key</button>
 </form>
     

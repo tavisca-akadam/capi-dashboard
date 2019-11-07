@@ -1,63 +1,108 @@
-import { Component, OnInit,Input } from '@angular/core';
-import {CreateNewKeyService} from '../../../services/create-new-key.service'
-import {KeyList} from '../../../shared/keyList.model'
-import {NewClient} from '../../../shared/newClient.model'
-import {NonCapiClient} from '../../../shared/nonCapiClient.model'
-import { CreateKeyAlertComponent } from '../create-key-alert/create-key-alert.component';
-import { Alert } from 'selenium-webdriver';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { Client } from "../../../shared/client.model"
+import { Program } from "../../../shared/program.model"
+import { NewClientRequest} from "../../../shared/newClientRequest.model"
+import { ProgramGroup } from "../../../shared/programGroup.model"
+import { FetchDataFromHierarchyApiService } from "../../../services/fetch-data-from-hierarchy-api.service"
+import { CreateNewKeyService } from "../../../services/create-new-key.service"
 @Component({
   selector: 'app-create-key-popup-content',
   templateUrl: './create-key-popup-content.component.html',
   styleUrls: ['./create-key-popup-content.component.css']
 })
 export class CreateKeyPopupContentComponent implements OnInit {
-  @Input() nonCapiClientList:NonCapiClient[];
-  constructor(private NewKey:CreateNewKeyService) { }
-  newAccessKey:KeyList;
-  bannerType:string;
+  constructor(private hierarchyService: FetchDataFromHierarchyApiService, private createService: CreateNewKeyService) { }
+  bannerType: string;
+  bannerData: string;
+
+  clientList: Client[];
+  displayClientList: boolean;
+  selectedClient: Client;
+
+  programList: Program[];
+  displayProgramList: boolean;
+  selectedProgram: Program;
+
+  programGroupList: ProgramGroup[];
+  displayCPGList: boolean;
+  selectedProgramGroup: ProgramGroup;
+
   ngOnInit() {
+    this.loadClient();
   }
-  requestApiToCreateKey(clientName,cpg,program,updatedBy,id){
-    this.NewKey.post(new NewClient(clientName,id,cpg,program,updatedBy))
+  loadClient() {
+    this.displayCPGList = false;
+    this.displayProgramList = false;
+    this.hierarchyService.getClients().subscribe(
+      clientsResponse => {
+        this.clientList=clientsResponse.clients;
+        this.displayClientList = true;
+      },
+      error => {
+        console.log("failed to load clients")
+      }
+    );
+  }
+  loadProgramGroup(client: Client) {
+    this.displayProgramList = false;
+    this.selectedClient = client;
+    this.hierarchyService.getProgramGroup(client.id).subscribe(
+      cpgResponse => {
+        this.programGroupList = cpgResponse.programGroups;
+        this.displayCPGList = true;
+      },
+      error => {
+        console.log("failed to load program groups")
+      }
+    );
+  }
+  loadProgram(programGroup: ProgramGroup) {
+    this.selectedProgramGroup = programGroup;
+    this.hierarchyService.getPrograms(programGroup.id).subscribe(
+      programResponse => {
+        this.programList = programResponse.programs;
+        this.displayProgramList = true;
+      },
+      error => {
+        console.log("failed to load programs")
+      }
+    );
+  }
+  selectProgram(program: Program) {
+    console.log(program)
+    this.selectedProgram = program;
+    console.log(this.selectedProgram)
+  }
+  createKey(event) {
+    if (!this.selectedClient || !this.selectedProgramGroup || !this.selectedProgram)
+      this.bannerType = "Required";
+    else
+      this.requestApiToCreateKey();
+    this.cleanStoredValues();
+    this.loadClient();
+  }
+  cleanStoredValues() {
+    this.clientList = null;
+    this.displayClientList = false;
+    this.selectedClient = null;
+    this.programList = null;
+    this.displayProgramList = false;
+    this.selectedProgram = null;
+    this.programGroupList = null;
+    this.displayCPGList = false;
+    this.selectedProgramGroup = null;
+  }
+  requestApiToCreateKey() {
+    this.bannerType = "Creating";
+    this.createService.post(new NewClientRequest(this.selectedClient.name, this.selectedClient.id, this.selectedProgramGroup.name, this.selectProgram.name, "cuttingChai"))
       .subscribe(
-        (key) => {
-          this.newAccessKey=key;
-          this.validateIfCreated(clientName,cpg,program,updatedBy,id);
+        (accessKey) => {
+          this.bannerType = "Success";
+          this.bannerData = accessKey.accessKey;
         },
         (error) => {
-          this.bannerType="Exists";
+          this.bannerType = "Exists";
         }
       );
-  }
-  validateIfCreated(clientName,cpg,program,updatedBy,id){
-    if(this.newAccessKey)    
-      if((this.newAccessKey.clientName==clientName)&&(this.newAccessKey.updatedBy==updatedBy)&&(this.newAccessKey.iskeyActive==false)&&this.newAccessKey.accessKey)
-        this.bannerType="Success";
-      else
-        this.bannerType="Error";
-  }
-  createKey(event){
-    var target=event.target
-    const clientName=target.querySelector('#clientName').value
-    const cpg=target.querySelector('#cpg').value
-    const program=target.querySelector('#program').value
-    const updatedBy="CuttingChai";
-    const id=this.getIdOfClinet(clientName);
-    if((clientName=="")||(cpg=="")||(program==""))
-    this.bannerType="Required";
-    else{
-      this.bannerType="Creating";
-      this.requestApiToCreateKey(clientName,cpg,program,updatedBy,id);
-    }
-  }
-  getIdOfClinet(clientName):String{
-    var id="";
-    this.nonCapiClientList.forEach(nonCapiClient => {
-      if(nonCapiClient.clientName==clientName){
-        id=nonCapiClient.ClientId;
-      }
-    });
-    return id;
   }
 }
