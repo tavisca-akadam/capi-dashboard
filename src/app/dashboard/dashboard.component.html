@@ -13,6 +13,9 @@
     </div>
 </div>
 <hr>
+<div *ngIf="alertService.displayAlert">
+    <app-alert-banner [bannerType]="bannerType"></app-alert-banner>
+</div>
 <div class="row">
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
         <app-key-list [keyListData]="keyListData"></app-key-list>

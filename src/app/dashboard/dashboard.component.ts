@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDataService } from '../services/fetch-data.service';
 import { KeyList } from '../shared/KeyList.model';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +10,11 @@ import { KeyList } from '../shared/KeyList.model';
 })
 export class DashboardComponent implements OnInit {
 
+  bannerType: string = 'Success';
+
   keyListData: KeyList[];
-  constructor(private keyList: FetchDataService) {}
+  constructor(private keyList: FetchDataService,
+              private alertService: AlertService) {}
 
   ngOnInit() {
     this.keyList.getAll().subscribe( keys => {
