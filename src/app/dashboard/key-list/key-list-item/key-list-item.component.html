@@ -20,13 +20,15 @@
 </div> -->
 
 
-<div class="row key-item-block">
+<!-- <div class="row key-item-block">
     <div class="col-md-2 col-sm-2 col-xs-2">
        <p class="client-id">{{keyItem.clientId}}</p>
-    </div>
+    </div> -->
     <div class="col-md-6 col-sm-6 col-xs-6">
         <app-key [receivedKey]="keyItem"></app-key>   
     </div>
+    <div class="col-md-2 col-sm-2 col-xs-2">
+        <app-copy-button [key]="keyItem.accessKey"></app-copy-button>
     <div class="col-md-2 col-sm-2 col-xs-2">
         <p>
             <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
