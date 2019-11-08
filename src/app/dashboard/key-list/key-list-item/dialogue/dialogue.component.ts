@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { ChangeKeyStateService } from 'src/app/services/change-key-state.service';
 import { KeyList } from 'src/app/shared/KeyList.model';
 import { AlertService } from 'src/app/services/alert.service';
+import { ButtonStateService } from 'src/app/services/button-state.service';
 
 @Component({
   selector: 'app-dialogue',
@@ -16,7 +17,8 @@ export class DialogueComponent implements OnInit {
   @Output() updatedKeyItem = new EventEmitter<KeyList>();
   
   constructor(private changeKeyState: ChangeKeyStateService,
-              private alertService: AlertService) { }
+              private alertService: AlertService,
+              private buttonStateService: ButtonStateService) { }
 
   ngOnInit() {
   }
@@ -25,6 +27,7 @@ export class DialogueComponent implements OnInit {
     // this.toggleYes.emit();
     this.alertService.displayAlert = true;
     this.alertService.alertMessage = !this.buttonState ? 'Activated' : 'Deactivated';
+    this.buttonStateService.buttonState.next(!this.buttonState);
     this.alertService.alertForKey = this.id;
     this.alertService.setTimeout(3);
     this.changeKeyState.onChangeKeyState(this.keyItem).subscribe((response) => {

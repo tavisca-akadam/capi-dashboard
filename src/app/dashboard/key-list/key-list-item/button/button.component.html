@@ -1,4 +1,4 @@
-<button 
+<!-- <button 
     type="button"
     class="btn button "
     [ngClass]="{'btn-outline-danger': buttonState == true, 'btn-outline-primary': buttonState == false}"
@@ -6,5 +6,19 @@
     [attr.data-target]="dataAttribute"
     >
     {{ buttonState ? 'Deactivate' : 'Activate' }}
-</button>
+</button> -->
+<div class="custom-control custom-switch">
+    <input 
+        type="checkbox" 
+        data-onstyle="success"
+        data-toggle="modal"
+        [attr.data-target]="dataAttribute"
+        class="custom-control-input" 
+        [id]="id + 'q'"
+        #stateToggle
+        (change)="onStateChange()"
+    >
+    <label class="custom-control-label" [for]="id + 'q'">{{ buttonState ? 'Enabled' : 'Disabled' }}</label>
+</div>
+<!-- q is concatanated with id so that the modal and toggle button doesn't have same id -->
 <!-- (click)="toggleKeyState($event)" -->
