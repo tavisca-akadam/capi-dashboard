@@ -1,6 +1,5 @@
-.button { 
+/* .button { 
   width: 100%;
-  /* max-width: 120px; */
   table-layout: fixed;
   border-collapse: collapse;
   box-shadow: 2px 2px 5px 0px #00000047;
@@ -23,4 +22,9 @@
 .btn-primary:hover{
   background-color: blue;
   color:white;
+} */
+.custom-control-input:checked~.custom-control-label::before {
+  color: #fff;
+  border-color: #28a745;
+  background-color: #28a745;
 }
