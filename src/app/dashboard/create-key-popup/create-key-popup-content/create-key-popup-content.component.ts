@@ -94,7 +94,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
   }
   requestApiToCreateKey() {
     this.bannerType = "Creating";
-    this.createService.post(new NewClientRequest(this.selectedClient.name, this.selectedClient.id, this.selectedProgramGroup.name, this.selectProgram.name, "cuttingChai"))
+    this.createService.post(new NewClientRequest(this.selectedClient.name, this.selectedClient.tenantId, this.selectedClient.id, this.selectedProgramGroup.name, this.selectProgram.name, "cuttingChai"))
       .subscribe(
         (accessKey) => {
           this.bannerType = "Success";

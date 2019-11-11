@@ -10,7 +10,7 @@ import { NewClientRequest } from '../shared/newClientRequest.model';
 export class CreateNewKeyService {
   url='https://localhost:44302/accesskey/generatenew';
   constructor(private http:HttpClient) { }
-  post(newClient:NewClientRequest):Observable<AccessKeyResponse>{
-    return this.http.post<AccessKeyResponse>(this.url,newClient);
+  post(newClientRequest:NewClientRequest):Observable<AccessKeyResponse>{
+    return this.http.post<AccessKeyResponse>(this.url,newClientRequest);
   }
 }
