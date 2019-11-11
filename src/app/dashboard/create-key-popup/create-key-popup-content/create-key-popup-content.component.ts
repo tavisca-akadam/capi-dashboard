@@ -69,9 +69,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
     );
   }
   selectProgram(program: Program) {
-    console.log(program)
     this.selectedProgram = program;
-    console.log(this.selectedProgram)
   }
   createKey(event) {
     if (!this.selectedClient || !this.selectedProgramGroup || !this.selectedProgram)
