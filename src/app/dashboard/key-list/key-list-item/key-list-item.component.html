@@ -10,7 +10,7 @@
         <div class="row">
                 <app-button [buttonState]="keyItem.iskeyActive" [id]="accessKey" ></app-button>
                 <app-dialogue (toggleYes)="toggleState()" [id]="accessKey" [keyItem]="keyItem" (updatedKeyItem)="keyItem=$event"></app-dialogue>
-        </div> 
+        </div>
         <div class="row rowUpdatedByName">
             <p class="lead">last updated by  <b>{{keyItem.updatedBy}} </b></p>        
         </div>
@@ -24,8 +24,11 @@
     <div class="col-md-2 col-sm-2 col-xs-2">
        <p class="client-id">{{keyItem.clientId}}</p>
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="col-md-4 col-sm-4 col-xs-4">
         <app-key [receivedKey]="keyItem"></app-key>   
+    </div>
+    <div class="col-md-2 col-sm-2 col-xs-2">
+        <app-copy-button [key]="keyItem.accessKey"></app-copy-button>
     </div>
     <div class="col-md-2 col-sm-2 col-xs-2">
         <p>

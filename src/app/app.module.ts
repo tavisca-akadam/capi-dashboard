@@ -24,6 +24,7 @@ import { AlertService } from './services/alert.service';
 import { ClientComponent } from './dashboard/create-key-popup/create-key-popup-content/client/client.component';
 import { ProgramGroupComponent } from './dashboard/create-key-popup/create-key-popup-content/program-group/program-group.component';
 import { ProgramComponent } from './dashboard/create-key-popup/create-key-popup-content/program/program.component';
+import { CopyButtonComponent } from './dashboard/key-list/key-list-item/copy-button/copy-button.component';
 
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
     AlertBannerComponent,
     ClientComponent,
     ProgramGroupComponent,
-    ProgramComponent
+    ProgramComponent,
+    CopyButtonComponent
   ],
   imports: [
     BrowserModule,
