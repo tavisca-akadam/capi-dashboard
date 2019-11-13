@@ -69,9 +69,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
     );
   }
   selectProgram(program: Program) {
-    console.log(program)
     this.selectedProgram = program;
-    console.log(this.selectedProgram)
   }
   createKey(event) {
     if (!this.selectedClient || !this.selectedProgramGroup || !this.selectedProgram)
@@ -94,7 +92,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
   }
   requestApiToCreateKey() {
     this.bannerType = "Creating";
-    this.createService.post(new NewClientRequest(this.selectedClient.name, this.selectedClient.id, this.selectedProgramGroup.name, this.selectProgram.name, "cuttingChai"))
+    this.createService.post(new NewClientRequest(this.selectedClient.name, this.selectedClient.tenantId, this.selectedClient.id, this.selectedProgramGroup.name, this.selectProgram.name, "cuttingChai"))
       .subscribe(
         (accessKey) => {
           this.bannerType = "Success";
