@@ -17,7 +17,7 @@ pipeline
             {
                     bat(script: 'npm install') 
                     bat(script: 'npm audit fix')
-      		    bat(script: 'npm run ng -- build --prod')
+      		    bat(script: 'npm run ng --build')
             }
         }
         stage('Deploy')
