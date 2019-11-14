@@ -2,7 +2,7 @@ FROM node:alpine AS builder
 
 WORKDIR /app
 
-COPY ./dist/ /app
+COPY . /app
 
 FROM nginx:alpine
 
