@@ -17,7 +17,7 @@ pipeline
             {
                     bat(script: 'npm install') 
                     bat(script: 'npm audit fix')
-      		        bat(script: 'npm run ng --build --prod')
+      		    bat(script: 'npm run ng --build')
             }
         }
         stage('Deploy')
@@ -27,7 +27,12 @@ pipeline
                 expression{params.RELEASE_ENVIRONMENT == "Deploy"}
             }
             steps
-            { 
+            {                    
+                powershell "Copy-Item EMS.Core/bin/Debug/netcoreapp2.2/publish/* infra/docker/ -Recurse"
+                bat "docker build infra/docker/ --tag=${DOCKER_REPO}:${BUILD_NUMBER}"    
+                bat "docker login -u ${DOCKER_USER_NAME} -p ${DOCKER_PASSWORD}"
+                bat "docker tag ${DOCKER_REPO}:${BUILD_NUMBER} ${DOCKER_USER_NAME}/${DOCKER_REPO}:${BUILD_NUMBER}"
+                bat "docker push ${DOCKER_USER_NAME}/${DOCKER_REPO}:${BUILD_NUMBER}"
             }
         }
     }
