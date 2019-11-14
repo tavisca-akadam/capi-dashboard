@@ -38,11 +38,5 @@ pipeline
             }
         }
     }
-    post
-    {
-        success
-        {
-            deleteDir()
-        }
-    }
+    
 }
