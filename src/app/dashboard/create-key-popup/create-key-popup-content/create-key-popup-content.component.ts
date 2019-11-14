@@ -106,7 +106,6 @@ export class CreateKeyPopupContentComponent implements OnInit {
   }
   getNewClientRequest(): NewClientRequest {
     var client = new NewClientRequest(this.selectedClient.id,this.selectedClient.name,this.selectedProgramGroup.name,this.selectedProgram.name,this.user,this.selectedClient.tenantId,this.selectedProgram.id,this.selectedClient.classicId);
-    console.log(client);
     return client;
   }
 }
