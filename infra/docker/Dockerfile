@@ -2,8 +2,8 @@ FROM node:alpine AS builder
 
 WORKDIR /app
 
-COPY . /app
+COPY ./dist/ /app
 
 FROM nginx:alpine
 
-COPY --from=builder /app/dist/ui/* /usr/share/nginx/html/
+COPY --from=builder /app/ui/* /usr/share/nginx/html/
