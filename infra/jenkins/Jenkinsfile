@@ -33,7 +33,7 @@ pipeline
             steps
             {      
                 powershell "Copy-Item ./dist/* infra/docker/ -Recurse"              
-                bat "docker build --tag=${DOCKER_REPO}:${BUILD_NAME} infra/docker/"    
+                bat "docker build --tag=${DOCKER_USER_NAME}/${DOCKER_REPO}:${BUILD_NAME} infra/docker/"    
                 bat "docker login -u ${DOCKER_USER_NAME} -p ${DOCKER_PASSWORD}"
                 bat "docker push ${DOCKER_USER_NAME}/${DOCKER_REPO}:${BUILD_NAME}"
             }
