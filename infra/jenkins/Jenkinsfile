@@ -32,7 +32,7 @@ pipeline
             }
             steps
             {                    
-                bat "docker build --tag=${DOCKER_REPO}:${BUILD_NAME}"    
+                bat "docker build --tag=${DOCKER_REPO}:${BUILD_NAME} ."    
                 bat "docker login -u ${DOCKER_USER_NAME} -p ${DOCKER_PASSWORD}"
                 bat "docker push ${DOCKER_USER_NAME}/${DOCKER_REPO}:${BUILD_NAME}"
             }
