@@ -6,4 +6,4 @@ COPY . /app
 
 FROM nginx:alpine
 
-COPY --from=builder /app/ui/* /usr/share/nginx/html/
+COPY --from=builder /app/dist/ui/* /usr/share/nginx/html/
