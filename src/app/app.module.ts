@@ -25,6 +25,7 @@ import { ClientComponent } from './dashboard/create-key-popup/create-key-popup-c
 import { ProgramGroupComponent } from './dashboard/create-key-popup/create-key-popup-content/program-group/program-group.component';
 import { ProgramComponent } from './dashboard/create-key-popup/create-key-popup-content/program/program.component';
 import { CopyButtonComponent } from './dashboard/key-list/key-list-item/copy-button/copy-button.component';
+import { TableHeaderComponent } from './dashboard/table-header/table-header.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,8 @@ const routes: Routes = [
     ClientComponent,
     ProgramGroupComponent,
     ProgramComponent,
-    CopyButtonComponent
+    CopyButtonComponent,
+    TableHeaderComponent
   ],
   imports: [
     BrowserModule,

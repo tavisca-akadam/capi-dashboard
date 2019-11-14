@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CopyButtonComponent implements OnInit {
   /* To copy any Text */
-  @Input() key: any;
+  @Input() key;
 copyText(val: string){
   let selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
