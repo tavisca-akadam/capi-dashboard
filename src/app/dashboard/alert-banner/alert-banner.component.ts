@@ -9,7 +9,7 @@ import { AlertService } from 'src/app/services/alert.service';
 export class AlertBannerComponent implements OnInit {
   @Input() bannerType:string;
 
-  constructor(private alertService: AlertService) { }
+  constructor(public alertService: AlertService) { }
 
   ngOnInit() {
   }

@@ -10,7 +10,6 @@ import { FetchDataService } from 'src/app/services/fetch-data.service';
 export class SearchComponent implements OnInit {
   @Input() receivedList: KeyList[];
   @Output() filteredList = new EventEmitter<KeyList[]>();
-  searchedKey: string;
   masterList: any[];
 
   constructor(private keyList: FetchDataService) { }

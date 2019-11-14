@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   keyListData: KeyList[];
   constructor(private keyList: FetchDataService,
-              private alertService: AlertService) {}
+              public alertService: AlertService) {}
 
   ngOnInit() {
     this.keyList.getAll().subscribe( keys => {
