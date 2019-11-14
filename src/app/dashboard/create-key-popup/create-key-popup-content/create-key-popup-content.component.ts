@@ -27,6 +27,7 @@ export class CreateKeyPopupContentComponent implements OnInit {
   displayCPGList: boolean;
   selectedProgramGroup: ProgramGroup;
 
+  user:string = "Cutting Chai";
   ngOnInit() {
     this.loadClient();
   }
@@ -92,15 +93,20 @@ export class CreateKeyPopupContentComponent implements OnInit {
   }
   requestApiToCreateKey() {
     this.bannerType = "Creating";
-    this.createService.post(new NewClientRequest(this.selectedClient.name, this.selectedClient.tenantId, this.selectedClient.id, this.selectedProgramGroup.name, this.selectProgram.name, "cuttingChai"))
+    this.createService.post(this.getNewClientRequest())
       .subscribe(
         (accessKey) => {
           this.bannerType = "Success";
-          this.bannerData = accessKey.accessKey;
+          this.bannerData = accessKey.AccessKey;
         },
         (error) => {
           this.bannerType = "Exists";
         }
       );
+  }
+  getNewClientRequest(): NewClientRequest {
+    var client = new NewClientRequest(this.selectedClient.id,this.selectedClient.name,this.selectedProgramGroup.name,this.selectedProgram.name,this.user,this.selectedClient.tenantId,this.selectedProgram.id,this.selectedClient.classicId);
+    console.log(client);
+    return client;
   }
 }
