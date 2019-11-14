@@ -1,3 +1,3 @@
 export class NewClientRequest {
-    constructor(public clientName:string,public TenantId:string,public ClientId:string, public programGroup:string, public program: string, public updatedBy: string) {}
+    constructor(public ClientId: string, public ClientName: string, public ProgramGroup:string, public Program:string, public UpdatedBy:string, public ClientTenantId:string, public ProgramId:string, public ClientClassicId:String) {}
   }
